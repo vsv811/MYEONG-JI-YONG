@@ -39,115 +39,160 @@ export const Contact = () => {
         <img 
           src="https://postfiles.pstatic.net/MjAyNjAyMjNfNjUg/MDAxNzcxODQ3MTI3MTQ4.bxwO2AG663COQzexLcAGrSsfMZo-BPGc_uqMJG1MINYg.eXPHwRBoSHYWpGgBCISzvJxqeB51Llasm3MqgTGhcoEg.JPEG/KakaoTalk_20260116_045641714.jpg?type=w773" 
           alt="Contact Background"
-          className="w-full h-full object-cover opacity-85"
+          className="w-full h-full object-cover opacity-100 scale-105"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/20 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-black/40 p-8 md:p-12 backdrop-blur-md border border-white/10"
+            className="p-0"
           >
-            <h2 className="text-3xl md:text-5xl mb-12 font-sans font-black leading-[1.2] text-white tracking-tighter uppercase">
-              SHOW<br />
-              CORPORATE EVENT<br />
-              PRIVATE PARTY
-            </h2>
+            <div className="space-y-4 mb-16">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-6xl md:text-8xl font-serif italic font-light text-white tracking-tighter leading-[0.85]"
+              >
+                SHOW
+              </motion.h2>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-5xl md:text-7xl font-serif font-bold text-white tracking-tighter leading-[0.85] opacity-90"
+              >
+                CORPORATE EVENT
+              </motion.h2>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-5xl md:text-7xl font-serif italic font-light text-brand-silver tracking-tighter leading-[0.85] opacity-80"
+              >
+                PRIVATE PARTY
+              </motion.h2>
+            </div>
             
-            <div className="space-y-6 mb-12">
-              <div className="flex items-center space-x-4 text-white">
-                <Mail size={18} className="text-brand-silver" />
-                <span className="text-sm tracking-widest font-medium">mjyoung980521@gmail.com</span>
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4 text-white/90 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
+                  <Mail size={16} />
+                </div>
+                <span className="text-sm tracking-[0.3em] font-light uppercase">mjyoung980521@gmail.com</span>
               </div>
-              <div className="flex space-x-4">
+              <div className="flex space-x-6">
                 <a 
                   href="https://www.instagram.com/xxeyon98/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-black transition-all"
+                  className="group flex items-center space-x-4 text-white/60 hover:text-white transition-all duration-500"
                 >
-                  <Instagram size={18} />
+                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/40 transition-all">
+                    <Instagram size={20} />
+                  </div>
+                  <span className="text-[10px] uppercase tracking-[0.4em] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">Instagram</span>
                 </a>
                 <a 
                   href="https://www.youtube.com/@xxeyon98" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-black transition-all"
+                  className="group flex items-center space-x-4 text-white/60 hover:text-white transition-all duration-500"
                 >
-                  <Youtube size={18} />
+                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/40 transition-all">
+                    <Youtube size={20} />
+                  </div>
+                  <span className="text-[10px] uppercase tracking-[0.4em] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">YouTube</span>
                 </a>
               </div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
+            className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 md:p-12 shadow-2xl"
           >
             {status === 'success' ? (
-              <div className="h-full flex flex-col justify-center items-center text-center p-12 border border-brand-silver/20 bg-white/5">
-                <Send className="mb-6 text-brand-silver" size={48} />
-                <h3 className="text-2xl mb-4">{t('메시지가 전송되었습니다', 'Message Sent')}</h3>
-                <p className="text-brand-silver/60">{t('빠른 시일 내에 답변 드리겠습니다.', 'We will get back to you shortly.')}</p>
-                <button onClick={() => setStatus('idle')} className="mt-8 text-xs uppercase tracking-widest underline">
+              <div className="h-[400px] flex flex-col justify-center items-center text-center">
+                <div className="w-20 h-20 rounded-full border border-brand-silver/20 flex items-center justify-center mb-8">
+                  <Send className="text-brand-silver" size={32} />
+                </div>
+                <h3 className="text-3xl mb-4 font-serif italic">{t('메시지가 전송되었습니다', 'Message Sent')}</h3>
+                <p className="text-brand-silver/60 max-w-xs mx-auto leading-relaxed">
+                  {t('빠른 시일 내에 답변 드리겠습니다.', 'We will get back to you shortly.')}
+                </p>
+                <button 
+                  onClick={() => setStatus('idle')} 
+                  className="mt-12 text-[10px] uppercase tracking-[0.4em] border-b border-white/20 pb-1 hover:border-white transition-all"
+                >
                   {t('다시 보내기', 'Send another')}
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-12">
-                <div className="grid md:grid-cols-2 gap-12">
-                  <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-10">
+                <div className="grid md:grid-cols-2 gap-10">
+                  <div className="group relative">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 block group-focus-within:text-white transition-colors">
+                      {t('이름', 'Name')}
+                    </label>
                     <input 
                       type="text" 
                       name="name" 
                       required 
-                      placeholder={t('이름', 'Name')}
-                      className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-silver outline-none transition-all placeholder:text-white/20"
+                      className="w-full bg-transparent border-b border-white/10 py-2 focus:border-white outline-none transition-all placeholder:text-white/5 text-sm"
                     />
                   </div>
-                  <div className="relative">
+                  <div className="group relative">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 block group-focus-within:text-white transition-colors">
+                      {t('이메일', 'Email')}
+                    </label>
                     <input 
                       type="email" 
                       name="email" 
                       required 
-                      placeholder={t('이메일', 'Email')}
-                      className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-silver outline-none transition-all placeholder:text-white/20"
+                      className="w-full bg-transparent border-b border-white/10 py-2 focus:border-white outline-none transition-all placeholder:text-white/5 text-sm"
                     />
                   </div>
                 </div>
                 
-                <div className="relative">
+                <div className="group relative">
+                  <label className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 block group-focus-within:text-white transition-colors">
+                    {t('제목', 'Subject')}
+                  </label>
                   <input 
                     type="text" 
                     name="subject" 
-                    placeholder={t('제목', 'Subject')}
-                    className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-silver outline-none transition-all placeholder:text-white/20"
+                    className="w-full bg-transparent border-b border-white/10 py-2 focus:border-white outline-none transition-all placeholder:text-white/5 text-sm"
                   />
                 </div>
 
-                <div className="relative">
+                <div className="group relative">
+                  <label className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 block group-focus-within:text-white transition-colors">
+                    {t('메시지', 'Message')}
+                  </label>
                   <textarea 
                     name="message" 
                     rows={4} 
                     required 
-                    placeholder={t('메시지', 'Message')}
-                    className="w-full bg-transparent border-b border-white/20 py-4 focus:border-brand-silver outline-none transition-all placeholder:text-white/20 resize-none"
+                    className="w-full bg-transparent border-b border-white/10 py-2 focus:border-white outline-none transition-all placeholder:text-white/5 resize-none text-sm"
                   />
                 </div>
 
                 <button 
                   type="submit" 
                   disabled={status === 'sending'}
-                  className="btn-primary w-full disabled:opacity-50"
+                  className="w-full bg-white text-black py-5 text-[11px] uppercase tracking-[0.5em] font-bold hover:bg-brand-silver transition-all duration-500 disabled:opacity-50"
                 >
-                  {status === 'sending' ? 'Sending...' : 'Send Message'}
+                  {status === 'sending' ? 'Sending...' : 'Send Inquiry'}
                 </button>
               </form>
             )}
