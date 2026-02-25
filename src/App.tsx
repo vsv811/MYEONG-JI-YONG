@@ -4,7 +4,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Work } from './components/Work';
-import { Media } from './components/Media';
 import { Contact } from './components/Contact';
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
           <Hero />
           <About />
           <Work />
-          <Media />
           <Contact />
         </main>
       </div>
