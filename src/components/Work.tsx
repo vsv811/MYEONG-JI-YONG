@@ -61,7 +61,7 @@ export const Work = () => {
       <header 
         className="w-full h-[75vh] flex justify-center items-center text-center"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://postfiles.pstatic.net/MjAyNjAyMjVfNjMg/MDAxNzcyMDEyNTYzMjUw.sy-mV1Rv59LdbGjlD3qvl9rB5qCSshNsUhPbM-L5fOQg.Q-2O7MyG4POkxYs1p5Nm61cqvUXMpsE8GL_w8KKDR9kg.PNG/magician_enhanced_quality_1.png?type=w773')`,
+          background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://postfiles.pstatic.net/MjAyNjAyMjVfNDUg/MDAxNzcyMDI0MDI0NDQx.eUR-nlokkssEF6ZwPZxQGlOu0W6CZrV3GyejcCxZpWIg.oMtkCoZrciEUAxhYUJa1CG6ElvgdSJClE5JNILNQuuUg.JPEG/KakaoTalk_20260116_045641714.jpg?type=w773')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
