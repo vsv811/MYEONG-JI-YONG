@@ -40,10 +40,10 @@ export const Hero = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="px-4"
             >
-              <h1 className="text-4xl md:text-6xl font-serif tracking-[0.15em] mb-6 uppercase font-bold text-white drop-shadow-2xl">
+              <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-serif tracking-[0.15em] mb-4 uppercase font-bold text-white drop-shadow-2xl leading-tight whitespace-nowrap">
                 MYEONG JI YONG
               </h1>
-              <p className="text-[10px] md:text-xs uppercase tracking-[0.8em] text-white/90 font-medium drop-shadow-md mb-12">
+              <p className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] uppercase tracking-[0.4em] sm:tracking-[0.6em] md:tracking-[0.8em] text-white/90 font-medium drop-shadow-md mb-12 whitespace-nowrap">
                 {t('Beyond Magic, Into Contemporary Art', 'Beyond Magic, Into Contemporary Art')}
               </p>
               <div className="block">

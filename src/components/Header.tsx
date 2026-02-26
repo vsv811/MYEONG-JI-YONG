@@ -16,6 +16,7 @@ export const Header = () => {
 
   const navItems = [
     { name: 'About', href: '#about' },
+    { name: 'Media', href: '#media' },
     { name: 'Work', href: '#work' },
     { name: 'Contact', href: '#contact' },
   ];

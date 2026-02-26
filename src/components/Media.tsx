@@ -1,60 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../LanguageContext';
-import { MediaItem } from '../types';
-import { ArrowUpRight } from 'lucide-react';
 
 export const Media = () => {
-  const { t, lang } = useLanguage();
-  const awards = [
-    {
-      country: "UNITED KINGDOM",
-      items: [
-        "2024 Stage Magician of the Year - Manipulation",
-        "WONVERVILLE West End",
-        "West End Magic Show",
-        "Edinburgh Fringe Festival - 4 star reviews, Sell-Out"
-      ]
-    },
-    {
-      country: "SPAIN",
-      items: [
-        "Gala Magic Tour Shows - Bilbao, Irun, Logroño",
-        "Congreso Mágia Nacional 2nd Prize"
-      ]
-    },
-    {
-      country: "FRANCE",
-      items: [
-        "L'heritier de l'illusion, France 2nd Prize",
-        "L'heritier de l'illusion, France 'Most touching act'"
-      ]
-    }
-  ];
+  const { t } = useLanguage();
 
   return (
-    <section id="media" className="section-padding bg-brand-black w-full">
-      <div className="max-w-4xl mx-auto text-center px-6 md:px-12">
-        <div className="space-y-24">
-          {awards.map((award, index) => (
-            <motion.div
-              key={award.country}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <h3 className="text-lg md:text-xl font-serif tracking-[0.2em] mb-8 text-white">
-                {award.country}
-              </h3>
-              <div className="space-y-3 text-xs md:text-sm text-brand-silver/80 font-light">
-                {award.items.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section id="media" className="pt-32 pb-16 relative font-sans bg-black text-white">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h2 className="text-[0.7rem] font-serif tracking-[6px] text-[#444] border-b border-[#1a1a1a] pb-[10px] mb-10 uppercase">
+            MEDIA
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-1 gap-8"
+        >
+          <div className="w-full aspect-video bg-[#0a0a0a]">
+            <iframe 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+            ></iframe>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
