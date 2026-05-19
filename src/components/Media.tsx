@@ -13,11 +13,11 @@ export const Media = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-16 md:mb-24"
         >
-          <h2 className="text-[0.7rem] font-serif tracking-[6px] text-[#444] border-b border-[#1a1a1a] pb-[10px] mb-10 uppercase">
+          <p className="text-[11px] md:text-[14px] font-label font-medium tracking-[0.3em] text-[#666] uppercase mb-8">
             MEDIA
-          </h2>
+          </p>
         </motion.div>
 
         <motion.div
@@ -29,7 +29,7 @@ export const Media = () => {
         >
           <div className="w-full aspect-video bg-[#0a0a0a]">
             <iframe 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              src="https://www.youtube.com/embed/u3u1OII9IiI" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

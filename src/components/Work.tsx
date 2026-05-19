@@ -2,142 +2,240 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../LanguageContext';
 
-const galleryData: Record<string, string[]> = {
-  SHOW: [
-    "https://postfiles.pstatic.net/MjAyNjAyMjVfMTU0/MDAxNzcyMDEyMjk2Mzk0.yszsnE-m91i4KyYw-tq41-sjqtMtVA-E4PwERzVNVusg.fa9xrL9IZEoKZxm9aLBGh45uy5d0jDv6EnU1u4TE7WIg.JPEG/photo1.jpg?type=w773",
-    "https://picsum.photos/seed/show2/800/600",
-    "https://picsum.photos/seed/show3/800/600",
-    "https://picsum.photos/seed/show4/800/600",
-    "https://picsum.photos/seed/show5/800/600",
-    "https://picsum.photos/seed/show6/800/600"
-  ],
-  "PRIVATE PARTY": [
-    "https://postfiles.pstatic.net/MjAyNjAyMjVfMjc5/MDAxNzcyMDEyMzEzMzUz.uYbAUXjqPDl6X_tZn1f8avhoD31drrQl9eu-hcP03sAg.K80XBSC_ahjC8DjS3hpEK0DaC4rbrHvGeqvOVaDnbIcg.JPEG/photo2.jpg?type=w773",
-    "https://picsum.photos/seed/party2/800/600",
-    "https://picsum.photos/seed/party3/800/600",
-    "https://picsum.photos/seed/party4/800/600"
-  ],
-  INTERNATIONAL: [
-    "https://postfiles.pstatic.net/MjAyNjAyMjVfMjIg/MDAxNzcyMDEyMzI0NDQ4.VUNSC790tucPDTG4JobfcK2Ik_UKg2DdxEEdgUQf_4wg.jAbcVUfcoEYKz2FWfEJAkftXhcHUQxt73y2whYOI7DUg.JPEG/photo3.jpg?type=w773",
-    "https://picsum.photos/seed/intl2/800/600",
-    "https://picsum.photos/seed/intl3/800/600",
-    "https://picsum.photos/seed/intl4/800/600",
-    "https://picsum.photos/seed/intl5/800/600"
-  ]
-};
-
-const categoryDetails: Record<string, { desc: string, enDesc: string }> = {
-  'SHOW': {
-    desc: '한 편의 극처럼 흐르는 서사적 연출. 음악, 조명, 오브제가 완벽한 조화를 이루며 관객을 몰입시키는 종합 예술 퍼포먼스',
-    enDesc: 'A narrative direction that flows like a play. A comprehensive art performance that immerses the audience with the perfect harmony of music, lighting, and objects.'
+const galleryData = [
+  {
+    id: 1,
+    title: 'BEYOND THE HORIZON',
+    descEn: 'A narrative of new senses cast beyond the horizon, toward the world.',
+    descKr: '수평선 너머, 세계를 향해 던지는 새로운 감각의 서사.',
+    main: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?q=80&w=1200&auto=format&fit=crop']
   },
-  'PRIVATE PARTY': {
-    desc: 'VIP 및 프라이빗 이벤트를 위한 연출과 다이렉팅 기록입니다. 격식 있는 공간의 무드를 완성하는 세련된 퍼포먼스. 프라이빗 파티나 갈라 디너의 품격에 맞는 절제된 화려함을 선사합니다.',
-    enDesc: 'Directing and production records for VIP and private events. A sophisticated performance that completes the mood of a formal space. We present understated splendor that matches the dignity of a private party or gala dinner.'
+  {
+    id: 2,
+    title: 'SHOW',
+    descEn: 'A live magic performance completed with contemporary aesthetics and sophisticated illusions.',
+    descKr: '현대적 미학과 정교한 일루전으로 완성하는 라이브 매직 퍼포먼스.',
+    main: '/show-main.jpg',
+    details: ['/show-main.jpg', '/show-detail-1.jpg', '/show-detail-2.jpg']
   },
-  'INTERNATIONAL': {
-    desc: '세계라는 무대 위에 기록한 독창적인 발자취',
-    enDesc: 'Original footsteps recorded on the stage of the world.'
+  {
+    id: 3,
+    title: 'PRIVATE PARTY',
+    descEn: 'A high-density exclusive performance designed for VIPs and high-end brands.',
+    descKr: 'VIP와 하이엔드 브랜드를 위해 설계된 밀도 높은 단독 공연.',
+    main: 'https://postfiles.pstatic.net/MjAyNjAyMjNfNDgg/MDAxNzcxODQ5NDc4MDYz.mI2_9kZ45c2M-3iO_63I77D_a9w32W2u-zX3Q8c826wg.kXw9xL3r6K294vC3R-E-nB1r-2mO-l8S1cO7f2kO-D8g.PNG/KakaoTalk_20260223_212048995_02.png?type=w773',
+    details: ['https://postfiles.pstatic.net/MjAyNjAyMjNfNDgg/MDAxNzcxODQ5NDc4MDYz.mI2_9kZ45c2M-3iO_63I77D_a9w32W2u-zX3Q8c826wg.kXw9xL3r6K294vC3R-E-nB1r-2mO-l8S1cO7f2kO-D8g.PNG/KakaoTalk_20260223_212048995_02.png?type=w773']
+  },
+  {
+    id: 4,
+    title: 'INTERNATIONAL',
+    descEn: 'Performances presented on the global stage, transcending language and culture based on FISM national representative experience.',
+    descKr: 'FISM 국가대표 경력을 바탕으로 언어와 문화를 초월해 세계 무대에 선보이는 공연.',
+    main: 'https://postfiles.pstatic.net/MjAyNjAyMjNfMjA1/MDAxNzcxODUwMDAzOTA5.N7lE22P8W8M8gQ0tS1X1A8mH0B2-1m_mZ7cQ38_x0oMg.u1J9Z5jP2H2c2xV8HqH3L0L1S1F1F8f7s8hX4I-O3vgg.PNG/KakaoTalk_20260223_212118539_01.png?type=w773',
+    details: ['https://postfiles.pstatic.net/MjAyNjAyMjNfMjA1/MDAxNzcxODUwMDAzOTA5.N7lE22P8W8M8gQ0tS1X1A8mH0B2-1m_mZ7cQ38_x0oMg.u1J9Z5jP2H2c2xV8HqH3L0L1S1F1F8f7s8hX4I-O3vgg.PNG/KakaoTalk_20260223_212118539_01.png?type=w773']
+  },
+  {
+    id: 5,
+    title: 'MAGIE NOUVELLE',
+    descEn: 'An independent artwork combining magic, theater, dance, and media art.',
+    descKr: '마술과 연극, 무용, 미디어 아트를 결합한 독립적인 예술 작품.',
+    main: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1200&auto=format&fit=crop']
+  },
+  {
+    id: 6,
+    title: 'MEDIA & BROADCAST',
+    descEn: 'A performance perfectly designed for any screen, including TV and online content.',
+    descKr: 'TV와 온라인 콘텐츠, 어떤 화면 위에서도 완벽하게 설계된 퍼포먼스.',
+    main: 'https://images.unsplash.com/photo-1513364776144-60967fc0f80c?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1513364776144-60967fc0f80c?q=80&w=1200&auto=format&fit=crop']
+  },
+  {
+    id: 7,
+    title: 'BRAND UNVEILING',
+    descEn: 'A launching performance that strongly imprints the brand\'s message by transforming it into a magical moment.',
+    descKr: '브랜드의 메시지를 마술적 순간으로 전환해 강렬하게 각인시키는 론칭 퍼포먼스.',
+    main: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200&auto=format&fit=crop']
+  },
+  {
+    id: 8,
+    title: 'ART MUSEUM & GALLERY',
+    descEn: 'A minimalist gallery-specialized performance that respects the atmosphere of the space and artwork.',
+    descKr: '공간과 작품의 분위기를 존중하는 미니멀한 갤러리 특화 퍼포먼스.',
+    main: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop']
+  },
+  {
+    id: 9,
+    title: 'ARTISTIC DIRECTION',
+    descEn: 'Creative direction that designs the entire aesthetics and narrative of the performance from planning to directing.',
+    descKr: '공연의 미학과 서사 전체를 기획부터 연출까지 함께 설계하는 크리에이티브 디렉션.',
+    main: 'https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=800&auto=format&fit=crop',
+    details: ['https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=1200&auto=format&fit=crop']
   }
-};
+];
 
 export const Work = () => {
-  const { lang } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const { t } = useLanguage();
+  const [selectedProject, setSelectedProject] = useState<typeof galleryData[0] | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
-  const openDetail = (category: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    setActiveCategory(category);
-    // Scroll to the top of the work section smoothly
-    setTimeout(() => {
-      document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  const openModal = (project: typeof galleryData[0]) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+    document.body.style.overflow = 'hidden';
   };
 
-  const closeDetail = () => {
-    setActiveCategory(null);
-    setTimeout(() => {
-      document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  const closeModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedProject) {
+      setCurrentImageIndex((prev) => (prev + 1) % selectedProject.details.length);
+    }
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedProject) {
+      setCurrentImageIndex((prev) => (prev === 0 ? selectedProject.details.length - 1 : prev - 1));
+    }
   };
 
   return (
-    <section id="work" className="w-full bg-[#000] text-[#fff] font-sans min-h-screen">
-      <div className="max-w-[1400px] mx-auto">
-        <AnimatePresence mode="wait">
-          {!activeCategory ? (
-            <motion.section 
-              key="grid"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-[40px] px-6 md:px-[50px] py-20 md:pt-[160px] md:pb-[100px]"
-            >
-              {Object.keys(galleryData).map((category, index) => (
-                <motion.div 
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
-                  className="cursor-pointer group" 
-                  onClick={(e) => openDetail(category, e)}
-                >
-                  <div className="w-full aspect-[1/1.4] overflow-hidden mb-[25px] bg-[#111]">
+    <section id="work" className="w-full bg-[#000000] text-white font-sans min-h-screen">
+      <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 py-[150px]">
+        {/* Section Label */}
+        <div className="mb-20">
+          <p className="text-[11px] md:text-[14px] font-label font-medium tracking-[0.3em] text-[#666] uppercase mb-8">
+            WORK
+          </p>
+          <div className="w-[80px] h-[1px] bg-white/10" />
+        </div>
+
+        {/* Work Grid */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-white/10 p-[1px]"
+        >
+          <AnimatePresence>
+            {(showAll ? galleryData : galleryData.slice(0, 3)).map((item, index) => (
+              <motion.div 
+                layout
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: (index % 3) * 0.1, duration: 0.8, ease: 'easeOut' }}
+                className="flex flex-col group cursor-pointer bg-black"
+                onClick={() => openModal(item)}
+              >
+                <div className="w-full h-full p-4 md:p-6 flex flex-col items-start hover:bg-white/5 transition-colors duration-500">
+                  {/* Image Container */}
+                  <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#050505] mb-6">
                     <img 
-                      src={galleryData[category][0]} 
-                      alt={category}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      src={item.main} 
+                      alt={item.title}
+                      className="w-full h-full object-cover grayscale opacity-90 group-hover:scale-[1.04] group-hover:opacity-100 transition-all duration-700 ease-out"
                       referrerPolicy="no-referrer"
                     />
+                    {/* Title Overlay at bottom of image */}
+                    <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                      <h3 className="font-serif font-bold text-[1.1rem] md:text-[1.3rem] tracking-[0.15em] text-white/80 group-hover:text-white transition-opacity duration-300 uppercase">
+                        {item.title}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 className="text-[1.2rem] md:text-[1.4rem] font-serif font-bold tracking-[4px] uppercase border-b-2 border-[#555] pb-[8px] inline-block text-white">
-                    {category}
-                  </h3>
-                </motion.div>
-              ))}
-            </motion.section>
-          ) : (
-            <motion.section
-              key="detail"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="px-6 md:px-[50px] py-20 md:py-[140px]"
+
+                  {/* Description Text Below Image */}
+                  <div className="w-full pt-3">
+                    <p className="text-[13px] leading-[1.6] text-white/40 font-[300] font-sans tracking-[0.02em] break-keep">
+                      {t(item.descKr, item.descEn)}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Load More Button */}
+        {!showAll && galleryData.length > 3 && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="w-full flex justify-center mt-24"
+          >
+            <button 
+              onClick={() => setShowAll(true)}
+              className="px-10 py-4 border border-white/20 text-[11px] tracking-[0.3em] uppercase text-white/60 hover:text-white hover:border-white transition-all duration-500 hover:bg-white/5"
             >
-              <div className="text-center mb-[80px]">
-                <h1 className="font-serif text-[2.5rem] md:text-[3.5rem] font-light mb-[20px]">
-                  {activeCategory}
-                </h1>
-                <p className="text-[#cfcfcf] text-[1rem] md:text-[1.15rem] leading-[1.8] font-light max-w-[800px] mx-auto">
-                  {lang === 'KR' ? categoryDetails[activeCategory].desc : categoryDetails[activeCategory].enDesc}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
-                {galleryData[activeCategory].map((src, idx) => (
-                  <img 
-                    key={idx} 
-                    src={src} 
-                    alt={`${activeCategory} ${idx + 1}`}
-                    className="w-full aspect-[3/2] object-cover bg-[#111]" 
-                    referrerPolicy="no-referrer"
-                  />
-                ))}
-              </div>
-
-              <button 
-                onClick={closeDetail}
-                className="block w-fit mx-auto mt-[60px] bg-transparent border border-[#444] text-white px-[40px] py-[12px] font-serif tracking-[3px] hover:bg-white hover:text-black transition-colors"
-              >
-                BACK TO WORK
-              </button>
-            </motion.section>
-          )}
-        </AnimatePresence>
+              LOAD MORE
+            </button>
+          </motion.div>
+        )}
       </div>
+
+      {/* Modal Gallery */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center backdrop-blur-sm"
+            onClick={closeModal}
+          >
+            <button 
+              className="absolute top-6 right-6 md:top-10 md:right-10 text-white/70 hover:text-white text-5xl transition-colors z-50 font-light"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+
+            <div 
+              className="relative w-full max-w-7xl h-[85vh] flex items-center justify-center px-6 md:px-16"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedProject.details.length > 1 && (
+                <button 
+                  className="absolute left-2 md:left-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light"
+                  onClick={prevImage}
+                >
+                  &#10094;
+                </button>
+              )}
+
+              <motion.img 
+                key={currentImageIndex}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, ease: 'easeOut' }}
+                src={selectedProject.details[currentImageIndex]} 
+                alt={`${selectedProject.title} detail ${currentImageIndex + 1}`}
+                className="max-w-full max-h-full object-contain grayscale"
+                referrerPolicy="no-referrer"
+              />
+
+              {selectedProject.details.length > 1 && (
+                <button 
+                  className="absolute right-2 md:right-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light"
+                  onClick={nextImage}
+                >
+                  &#10095;
+                </button>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

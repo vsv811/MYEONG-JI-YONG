@@ -51,8 +51,8 @@ export const Contact = () => {
             CONTACT
           </h2>
           
-          <div className="text-sm md:text-base text-brand-silver/80 mb-16 font-light tracking-widest uppercase flex flex-col items-center justify-center">
-            <p className="text-center mb-6">Show | Corporate Event | Private Party</p>
+          <div className="text-sm md:text-base text-brand-silver/80 mb-16 flex flex-col items-center justify-center">
+            <p className="text-center mb-6 font-script text-2xl md:text-3xl tracking-normal normal-case">Make your imagination for real</p>
             <div className="flex gap-6 justify-center items-center">
               <a href="https://www.instagram.com/xxeyon98/" target="_blank" rel="noopener noreferrer" className="text-brand-silver/80 hover:text-white transition-colors">
                 <Instagram size={20} />
@@ -66,12 +66,12 @@ export const Contact = () => {
           {status === 'success' ? (
             <div className="py-12 border border-white/10 bg-brand-black/40 backdrop-blur-md">
               <h3 className="text-2xl mb-4 font-serif italic text-white">{t('메시지가 전송되었습니다', 'Message Sent')}</h3>
-              <p className="text-brand-silver/60 mb-8 font-light">
+              <p className="text-brand-silver/60 mb-8 font-sans font-light">
                 {t('빠른 시일 내에 답변 드리겠습니다.', 'We will get back to you shortly.')}
               </p>
               <button 
-                onClick={() => setStatus('idle')} 
-                className="text-xs uppercase tracking-widest border-b border-white/20 pb-1 hover:border-white transition-all text-white font-bold"
+                onClick={() => setStatus('idle')}
+                className="text-[11px] font-mono uppercase tracking-[0.2em] border-b border-white/20 pb-1 hover:border-white transition-all text-white/80"
               >
                 {t('다시 보내기', 'Send another')}
               </button>
@@ -85,7 +85,7 @@ export const Contact = () => {
                     name="name" 
                     required 
                     placeholder="NAME"
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-xs tracking-widest text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-[12px] font-mono tracking-[0.2em] text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -94,17 +94,18 @@ export const Contact = () => {
                     name="email" 
                     required 
                     placeholder="E-MAIL"
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-xs tracking-widest text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-[12px] font-mono tracking-[0.2em] text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
                   />
                 </div>
               </div>
-              
+
               <div>
                 <input 
                   type="text" 
                   name="subject" 
+                  required 
                   placeholder="SUBJECT"
-                  className="w-full bg-transparent border-b border-white/20 py-3 text-xs tracking-widest text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-[12px] font-mono tracking-[0.2em] text-white placeholder:text-white/40 focus:border-white outline-none transition-colors"
                 />
               </div>
 
@@ -114,7 +115,7 @@ export const Contact = () => {
                   rows={4} 
                   required 
                   placeholder="MESSAGE"
-                  className="w-full bg-transparent border-b border-white/20 py-3 text-xs tracking-widest text-white placeholder:text-white/40 focus:border-white outline-none transition-colors resize-none"
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-[12px] font-mono tracking-[0.2em] text-white placeholder:text-white/40 focus:border-white outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -122,7 +123,7 @@ export const Contact = () => {
                 <button 
                   type="submit" 
                   disabled={status === 'sending'}
-                  className="border border-white/20 px-16 py-4 text-xs tracking-widest text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50 font-bold"
+                  className="border border-white/20 px-16 py-4 text-[12px] font-mono tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50"
                 >
                   {status === 'sending' ? 'SENDING...' : 'SEND'}
                 </button>

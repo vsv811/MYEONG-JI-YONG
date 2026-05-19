@@ -142,7 +142,7 @@ export const Portfolio = () => {
             <div className="w-full mb-[30px]">
               <div className="relative w-full pb-[56.25%] bg-[#0a0a0a] group">
                 <iframe 
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0" 
+                  src="https://www.youtube.com/embed/u3u1OII9IiI?modestbranding=1&rel=0" 
                   title="Performance Video"
                   frameBorder="0" 
                   allowFullScreen

@@ -6,62 +6,67 @@ export const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-brand-black">
+    <section className="relative h-screen w-full bg-brand-black overflow-hidden flex flex-col items-center">
       {/* Background Media */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Blurred Background Fill */}
+      <div className="absolute inset-0 z-0">
         <img 
-          src="https://blogpfthumb-phinf.pstatic.net/MjAyNjAyMjNfMTM0/MDAxNzcxODM1NjI5NDk5.Q0l1dI62CvidksYl0VHO8nh0xv6Ob-byJr7Kwslni98g.8UE2kHUFbE5IEOlEIxGMuvAv44N4ia-X1Uovb7IAVZkg.PNG/KakaoTalk_20260213_043426494.png/KakaoTalk_20260213_043426494.png" 
+          src="/hero.png" 
           alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-20 blur-3xl scale-110 grayscale"
+          className="absolute inset-0 w-full h-full object-cover opacity-10 blur-xl grayscale"
           referrerPolicy="no-referrer"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-black/50 to-brand-black" />
       </div>
 
-      {/* Portrait and Content Container */}
-      <div className="relative z-10 w-full max-w-4xl h-[85vh] mt-16 flex flex-col items-center justify-center px-6">
-        {/* Sharp Foreground Image */}
-        <div className="relative h-full w-full flex items-center justify-center">
+      {/* Main Container - Editorial Layout */}
+      <div className="relative z-10 w-full h-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-[144px] flex flex-col justify-end lg:pb-24 pb-16">
+        
+        {/* Core Image Container - Free from text */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-x-0 top-0 h-[80vh] md:h-[85vh] w-full flex justify-center -z-10 mt-10 md:mt-0"
+        >
           <img 
-            src="https://blogpfthumb-phinf.pstatic.net/MjAyNjAyMjNfMTM0/MDAxNzcxODM1NjI5NDk5.Q0l1dI62CvidksYl0VHO8nh0xv6Ob-byJr7Kwslni98g.8UE2kHUFbE5IEOlEIxGMuvAv44N4ia-X1Uovb7IAVZkg.PNG/KakaoTalk_20260213_043426494.png/KakaoTalk_20260213_043426494.png" 
-            alt="Hero"
-            className="h-full w-auto object-contain opacity-70 grayscale shadow-2xl"
+            src="/hero.png" 
+            alt="Hero Portrait"
+            className="h-full w-auto object-contain opacity-80 grayscale mix-blend-lighten"
             referrerPolicy="no-referrer"
           />
+          {/* Subtle fade out at the bottom of the image */}
+          <div className="absolute inset-x-0 bottom-0 h-1/4 md:h-1/3 bg-gradient-to-t from-brand-black to-transparent" />
+        </motion.div>
+
+        {/* Text Layout strategically positioned below the image breathing room */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between w-full border-t border-white/20 pt-8 gap-6 md:gap-8">
           
-          {/* Deep Blue Accent Gradient overlay on image */}
-          <div className="absolute inset-0 bg-radial-[at_50%_50%] from-brand-blue/20 via-transparent to-transparent pointer-events-none" />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="flex flex-col"
+          >
+            <h1 className="text-3xl md:text-5xl lg:text-[4rem] font-serif font-light tracking-[0.15em] md:tracking-[0.2em] uppercase text-white mb-2 md:mb-4 whitespace-nowrap">
+              Myeong Ji Yong
+            </h1>
+            <p className="text-[9px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-brand-silver/80">
+              {t('Beyond Magic, Into Contemporary Art', 'Beyond Magic, Into Contemporary Art')}
+            </p>
+          </motion.div>
 
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 md:pb-20 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="px-4"
-            >
-              <h1 className="text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-serif tracking-[0.15em] mb-4 uppercase font-bold text-white drop-shadow-2xl leading-tight whitespace-nowrap">
-                MYEONG JI YONG
-              </h1>
-              <p className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] uppercase tracking-[0.4em] sm:tracking-[0.6em] md:tracking-[0.8em] text-white/90 font-medium drop-shadow-md mb-12 whitespace-nowrap">
-                {t('Beyond Magic, Into Contemporary Art', 'Beyond Magic, Into Contemporary Art')}
-              </p>
-              <div className="block">
-                <a 
-                  href="#contact" 
-                  className="btn-primary font-black scale-90 md:scale-100 border-2 hover:bg-white hover:text-brand-black hover:border-white transition-all duration-500"
-                >
-                  Get Tickets
-                </a>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="flex flex-col items-start lg:items-end gap-2 md:gap-4 lg:pb-2"
+          >
+            <p className="font-script text-3xl md:text-4xl lg:text-5xl text-white/50 font-light pr-4 lg:pr-0">
+              Make your imagination for real
+            </p>
+          </motion.div>
+
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-brand-silver/40">
-        <div className="w-[1px] h-8 bg-brand-silver/40 mx-auto" />
       </div>
     </section>
   );
