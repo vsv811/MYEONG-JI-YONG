@@ -123,7 +123,7 @@ export const Contact = () => {
                 <button 
                   type="submit" 
                   disabled={status === 'sending'}
-                  className="border border-white/20 px-16 py-4 text-[12px] font-mono tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50"
+                  className="border border-white/20 px-16 py-4 text-[12px] font-mono font-bold tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors disabled:opacity-50"
                 >
                   {status === 'sending' ? 'SENDING...' : 'SEND'}
                 </button>

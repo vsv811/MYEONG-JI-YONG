@@ -9,7 +9,7 @@ export const About = () => {
     <section id="about" className="relative w-full bg-[#030303] text-gray-200 overflow-hidden font-sans">
       {/* Background Image Placeholder (Subtle overlay) */}
       <div 
-        className="absolute top-0 right-0 w-full md:w-[60%] h-full bg-[url('https://blogpfthumb-phinf.pstatic.net/MjAyNjAzMTlfOTMg/MDAxNzczOTE0NTI1NjIw.xVBnnRGGSVIfMEr1OmOVGr4lSkIaElrJMjbc7koPFicg.Ti_xpEf3wA_C8mkA8yYeXShXQyHy6RCHuVobFGkVfa4g.PNG/profileImage.png?type=w161')] bg-cover bg-center bg-no-repeat pointer-events-none opacity-20 grayscale"
+        className="absolute top-0 right-0 w-full md:w-[60%] h-full bg-[url('/SHOW%20DETAIL13.jpg')] bg-cover bg-center bg-no-repeat pointer-events-none opacity-20 grayscale"
         style={{ mixBlendMode: 'lighten' }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/60 to-transparent" />
@@ -64,60 +64,60 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {/* Column 01 */}
-            <div className="flex flex-col items-center text-center md:px-6 lg:px-10 md:border-r border-[#222] pb-12 md:pb-0">
+            <div className="flex flex-col items-center text-center md:px-6 lg:px-10 md:border-r border-[#222] pb-12 md:pb-0 h-full">
               <span className="text-[10px] text-[#444] mb-8 font-mono">01</span>
               <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2">{t("VISUAL ARTISTRY", "VISUAL ARTISTRY")}</h3>
               <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("독창적 연출과 예술적 서사", "Original Directing and Artistic Narrative")}</p>
               <div className="w-8 h-[1px] bg-[#444] mb-8 mx-auto" />
-              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep">
+              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep flex-1">
                 {t("단순한 트릭이 아닌, 하나의 이야기로 완성되는 무대. 동선, 연출, 시각적 언어 모두를 직접 설계해 관객이 끝난 후에도 기억하는 작품을 만듭니다.", "A stage completed not as a simple trick but as a single story. We design the movement, direction, and visual language ourselves to create works that the audience remembers even after they are over.")}
               </p>
               {/* Image Box */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
+              <div className="relative w-full mt-auto aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
                 <img 
-                  src="https://images.unsplash.com/photo-1507676184212-d0c30a47bfb1?q=80&w=800&auto=format&fit=crop" 
+                  src="/VISUAL ARTISTRY.jpg" 
                   alt="Visual Artistry" 
-                  className="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>
             </div>
 
             {/* Column 02 */}
-            <div className="flex flex-col items-center text-center md:px-10 lg:px-16 md:border-r border-[#222] pb-12 md:pb-0 pt-12 md:pt-0 border-t md:border-t-0 border-[#222]">
+            <div className="flex flex-col items-center text-center md:px-6 lg:px-10 md:border-r border-[#222] pb-12 md:pb-0 pt-12 md:pt-0 border-t md:border-t-0 border-[#222] h-full">
               <span className="text-[10px] text-[#444] mb-8 font-mono">02</span>
-              <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2">{t("ARTISTIC DIRECTION", "ARTISTIC DIRECTION")}</h3>
-              <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("마지 누벨 & 퍼포먼스 아트", "Magie Nouvelle & Performance Art")}</p>
+              <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2 uppercase break-keep ">{t("공공기관 퍼포먼스", "PUBLIC INSTITUTION")}</h3>
+              <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("하이엔드 파트너십", "High-end Partnership")}</p>
               <div className="w-8 h-[1px] bg-[#444] mb-8 mx-auto" />
-              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep">
-                {t("마술을 하나의 예술적 언어로 구사하는 Magie Nouvelle 아티스트. 감각적인 오브제와 깊이 있는 감정의 흐름을 융합해 마술과 현대 공연 예술의 경계를 허무는 독자적인 미학을 구축합니다.", "A Magie Nouvelle artist who uses magic as an artistic language. Fusing sensuous objects and the deep flow of emotions, we build an original aesthetic that breaks the boundaries between magic and modern performing arts.")}
+              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep flex-1">
+                {t("국가적 행사와 지자체 무대의 품격을 갤러리 수준으로 격상시키는 하이엔드 파트너십.", "A high-end partnership that elevates the dignity of national events and local government stages to the level of a gallery.")}
               </p>
               {/* Image Box */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
+              <div className="relative w-full mt-auto aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
                 <img 
-                  src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" 
-                  alt="Artistic Direction" 
-                  className="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                  src="/Public Institution.jpg" 
+                  alt="Public Institution" 
+                  className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>
             </div>
 
             {/* Column 03 */}
-            <div className="flex flex-col items-center text-center md:px-6 lg:px-10 pt-12 md:pt-0 border-t md:border-t-0 border-[#222]">
+            <div className="flex flex-col items-center text-center md:px-6 lg:px-10 pt-12 md:pt-0 border-t md:border-t-0 border-[#222] h-full">
               <span className="text-[10px] text-[#444] mb-8 font-mono">03</span>
               <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2">{t("PREMIUM AUTHORITY", "PREMIUM AUTHORITY")}</h3>
               <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("하이엔드 가치 & 프리미엄", "High-end Value & Premium")}</p>
               <div className="w-8 h-[1px] bg-[#444] mb-8 mx-auto" />
-              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep">
+              <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep flex-1">
                 {t("FISM ASIA 한국 국가대표, 국내 최정상 일루션 프로덕션의 프로페셔널 크루. 묵묵히 쌓아온 커리어가 말하는 신뢰. 기업 VIP와 럭셔리 브랜드가 선택하는 하이엔드 무대의 압도적인 품격을 증명합니다.", "FISM ASIA National Representative of Korea, professional crew of the nation's top illusion production. The trust spoken by a silently built career. We prove the overwhelming dignity of the high-end stage chosen by corporate VIPs and luxury brands.")}
               </p>
               {/* Image Box */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
+              <div className="relative w-full mt-auto aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
                 <img 
-                  src="https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=800&auto=format&fit=crop" 
-                  alt="Cross Genre" 
-                  className="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                  src="/PREMIUM AUTHORITY.jpg?v=2" 
+                  alt="Premium Authority" 
+                  className="w-full h-full object-cover object-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -132,14 +132,25 @@ export const About = () => {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+           className="relative mt-24 pt-12 md:pt-24"
         >
-          <p className="text-[10px] md:text-[11px] tracking-[0.4em] text-[#666] uppercase mb-10">
-            {t("수상 & 이력", "HISTORY")}
-          </p>
-          <div className="w-full h-[1px] bg-[#222] mb-12" />
+          {/* History Background Image Placeholder */}
+          <div 
+            className="absolute inset-x-0 inset-y-0 md:inset-y-[-100px] w-full h-[calc(100%+100px)] bg-[url('/black_marble_texture.png')] bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.25] grayscale mix-blend-lighten"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/40 md:via-transparent to-[#030303]" />
+            <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#030303] to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#030303] to-transparent" />
+          </div>
 
-          {/* Table / Grid Structure */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[100px] gap-y-12">
+          <div className="relative z-10">
+            <p className="text-[10px] md:text-[11px] tracking-[0.4em] text-[#666] uppercase mb-10">
+              {t("수상 & 이력", "HISTORY")}
+            </p>
+            <div className="w-full h-[1px] bg-[#222] mb-12" />
+
+            {/* Table / Grid Structure */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[100px] gap-y-12">
             
             {/* History Item 1 */}
             <div className="flex flex-row justify-between items-start pb-6 border-b md:border-none border-[#222]">
@@ -203,7 +214,7 @@ export const About = () => {
               </div>
               <span className="text-[13px] text-[#555] font-mono mt-1 shrink-0 ml-4">-</span>
             </div>
-
+          </div>
           </div>
         </motion.div>
 
