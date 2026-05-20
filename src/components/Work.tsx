@@ -8,6 +8,7 @@ const galleryData = [
     title: 'BEYOND THE HORIZON',
     descEn: 'A narrative of new senses cast beyond the horizon, toward the world.',
     descKr: '수평선 너머, 세계를 향해 던지는 새로운 감각의 서사.',
+    detailKr: 'NEW ACT For the Stage.',
     main: '/Beyond The Horizon.jpg',
     details: ['/Beyond The Horizon.jpg']
   },
@@ -16,6 +17,7 @@ const galleryData = [
     title: 'SHOW',
     descEn: 'A live magic performance completed with contemporary aesthetics and sophisticated illusions.',
     descKr: '현대적 미학과 정교한 일루전으로 완성하는 라이브 매직 퍼포먼스.',
+    detailKr: '현대적 미학과 정교한 일루전으로 완성하는 라이브 매직 퍼포먼스.',
     main: '/SHOW.jpg',
     details: [
       '/SHOW DETAIL1.jpg',
@@ -37,6 +39,7 @@ const galleryData = [
     title: 'PRIVATE PARTY',
     descEn: 'A high-density exclusive performance designed for VIPs and high-end brands.',
     descKr: 'VIP와 하이엔드 브랜드를 위해 설계된 밀도 높은 단독 공연.',
+    detailKr: '오직 소수의 VIP만을 위해 기획된 프라이빗 스페이스에서 시각적 몰입감을 극대화하는 하이엔드 단독 무대.',
     main: '/PRIVATE PARTY.jpg',
     details: [
       '/PRIVATE PARTY DETAIL1.jpg',
@@ -52,6 +55,7 @@ const galleryData = [
     title: 'INTERNATIONAL',
     descEn: 'Performances presented on the global stage, transcending language and culture based on FISM national representative experience.',
     descKr: 'FISM 국가대표 경력을 바탕으로 언어와 문화를 초월해 세계 무대에 선보이는 공연.',
+    detailKr: '세계마술챔피언십 FISM Asia 한국 국가대표 출신 아티스트로서 언어와 문화의 경계를 초월해 글로벌 스탠다드를 충족하는 무대.',
     main: '/INTERNATIONAL.jpg',
     details: [
       '/INTERNATIONAL DETAIL 1.jpg',
@@ -67,6 +71,7 @@ const galleryData = [
     title: 'BRAND UNVEILING',
     descEn: 'A launching performance that strongly imprints the brand\'s message by transforming it into a magical moment.',
     descKr: '브랜드의 메시지를 마술적 순간으로 전환해 강렬하게 각인시키는 론칭 퍼포먼스.',
+    detailKr: '의류 브랜드 TAPAHA 오프라인 오프닝 VIP 쇼에서 브랜드 아이덴티티와 메시지를 60분의 스토리텔링으로 녹여낸 브랜드 언베일링 퍼포먼스.',
     main: '/BRAND UNVEILING.png',
     details: [
       '/BRAND UNVEILING Detail1.jpg',
@@ -82,6 +87,7 @@ const galleryData = [
     title: 'MEDIA & BROADCAST',
     descEn: 'A performance perfectly designed for any screen, including TV and online content.',
     descKr: 'TV와 온라인 콘텐츠, 어떤 화면 위에서도 완벽하게 설계된 퍼포먼스.',
+    detailKr: 'KBS 《굿모닝 대한민국》 단독 출연\n\'우리동네 人스타 — 피터팬을 꿈꾸던 소년, 마술사가 되다. 마술사 명지용\'',
     main: '/MEDIA & BROADCAST.jpg',
     details: [
       '/MEDIA & BROADCAST DETAIL1.jpg',
@@ -97,6 +103,7 @@ const galleryData = [
     title: 'MAGIE NOUVELLE',
     descEn: 'An independent artwork combining magic, theater, dance, and media art.',
     descKr: '마술과 연극, 무용, 미디어 아트를 결합한 독립적인 예술 작품.',
+    detailKr: '프랑스에서 발원한 Magie Nouvelle의 정신을 이어받아 마술을 현대 미술과 무용의 언어로 재정립하는 독립적 예술 프로덕션.',
     main: '/MAGIE NOUVELLE-1.jpg',
     details: [
       '/MAGIE NOUVELLE DETAIL1.jpg',
@@ -110,14 +117,19 @@ const galleryData = [
     title: 'ART MUSEUM & GALLERY',
     descEn: 'A minimalist gallery-specialized performance that respects the atmosphere of the space and artwork.',
     descKr: '공간과 작품의 분위기를 존중하는 미니멀한 갤러리 특화 퍼포먼스.',
-    main: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop',
-    details: ['https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop']
+    detailKr: '화이트 큐브의 미니멀한 공간감을 해치지 않도록 차가운 오브제와 정적만을 활용해 시각적 긴장감을 조각하는 전시 특화 퍼포먼스.',
+    main: '/ART MUSEUM & GALLERY.jpg',
+    details: [
+      '/ART MUSEUM & GALLERY DETAIL1.jpg',
+      '/ART MUSEUM & GALLERY DETAIL2.jpg'
+    ]
   },
   {
     id: 9,
     title: 'PUBLIC INSTITUTION',
     descEn: 'A high-end partnership that elevates the dignity of national events and local government stages to the level of a gallery.',
     descKr: '국가적 행사와 지자체 무대의 품격을 갤러리 수준으로 격상시키는 하이엔드 파트너십.',
+    detailKr: '인천 검단소방서 외 다수 기관과의 공식 협업 무대를 비롯해 지자체 및 국가 기관이 깊이 신뢰하는 독보적인 공공 파트너십.',
     main: '/Public Institution.jpg',
     details: [
       '/Public Institution DEtail 1.jpg',
@@ -251,11 +263,21 @@ export const Work = () => {
             </button>
 
             <div 
-              className="relative w-full max-w-7xl h-[85vh] flex items-center justify-center px-6 md:px-16"
+              className="relative w-full max-w-7xl h-[85vh] flex flex-col items-center justify-start px-6 md:px-16 pt-12 md:pt-16 pb-8 overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {selectedProject.title === 'MEDIA & BROADCAST' && selectedProject.details.length === 6 ? (
-                <div className="flex flex-col gap-2 md:gap-4 w-full h-full justify-center overflow-y-auto py-8 max-w-5xl mx-auto">
+              <div className="w-full max-w-5xl text-left mb-8 md:mb-12 shrink-0 border-b border-[#222] pb-6">
+                <h3 className="font-serif text-[18px] md:text-[24px] font-bold text-white tracking-[0.2em] mb-4">
+                  {selectedProject.title}
+                </h3>
+                <p className="text-[#888] text-[13px] md:text-[15px] leading-[1.8] break-keep whitespace-pre-wrap max-w-3xl">
+                  {t(selectedProject.detailKr || selectedProject.descKr, selectedProject.descEn)}
+                </p>
+              </div>
+
+              <div className="w-full flex-1 flex flex-col justify-start">
+                {selectedProject.title === 'MEDIA & BROADCAST' && selectedProject.details.length === 6 ? (
+                  <div className="flex flex-col gap-2 md:gap-4 w-full justify-center max-w-5xl mx-auto">
                   {/* Top 3 Images */}
                   <div className="flex justify-center gap-2 md:gap-4 w-full">
                     {selectedProject.details.slice(0, 3).map((detailImg, idx) => (
@@ -283,24 +305,25 @@ export const Work = () => {
                     ))}
                   </div>
                 </div>
-              ) : (selectedProject.title === 'BRAND UNVEILING' || selectedProject.title === 'PRIVATE PARTY' || selectedProject.title === 'INTERNATIONAL' || selectedProject.title === 'SHOW' || selectedProject.title === 'MAGIE NOUVELLE' || selectedProject.title === 'PUBLIC INSTITUTION') && selectedProject.details.length >= 3 ? (
-                <div className={`grid ${selectedProject.title === 'SHOW' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : selectedProject.title === 'MAGIE NOUVELLE' ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'} gap-2 md:gap-4 w-full h-full content-center overflow-y-auto py-8 max-w-5xl mx-auto`}>
+              ) : (selectedProject.title === 'BRAND UNVEILING' || selectedProject.title === 'PRIVATE PARTY' || selectedProject.title === 'INTERNATIONAL' || selectedProject.title === 'SHOW' || selectedProject.title === 'MAGIE NOUVELLE' || selectedProject.title === 'PUBLIC INSTITUTION' || selectedProject.title === 'ART MUSEUM & GALLERY') && selectedProject.details.length >= 2 ? (
+                <div className={`grid ${selectedProject.title === 'SHOW' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : selectedProject.title === 'MAGIE NOUVELLE' || selectedProject.title === 'ART MUSEUM & GALLERY' ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'} gap-2 md:gap-4 w-full content-center max-w-5xl mx-auto`}>
                   {selectedProject.details.map((detailImg, idx) => (
                     <div key={idx} className="relative w-full overflow-hidden bg-[#050505]">
                       <img 
                         src={detailImg} 
                         alt={`${selectedProject.title} detail ${idx + 1}`}
                         className="w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-[1.03] transition-all duration-700 aspect-square md:aspect-[4/3]"
+                        style={{ objectPosition: selectedProject.title === 'ART MUSEUM & GALLERY' && idx === 1 ? 'center 20%' : 'center' }}
                         referrerPolicy="no-referrer"
                       />
                     </div>
                   ))}
                 </div>
               ) : (
-                <>
+                <div className="relative flex-1 w-full max-h-[60vh] flex flex-col md:flex-row items-center justify-center">
                   {selectedProject.details.length > 1 && (
                     <button 
-                      className="absolute left-2 md:left-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light"
+                      className="absolute left-2 md:left-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light top-1/2 -translate-y-1/2"
                       onClick={prevImage}
                     >
                       &#10094;
@@ -320,14 +343,15 @@ export const Work = () => {
 
                   {selectedProject.details.length > 1 && (
                     <button 
-                      className="absolute right-2 md:right-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light"
+                      className="absolute right-2 md:right-8 text-white/40 hover:text-white text-4xl md:text-6xl transition-colors z-50 font-light top-1/2 -translate-y-1/2"
                       onClick={nextImage}
                     >
                       &#10095;
                     </button>
                   )}
-                </>
+                </div>
               )}
+              </div>
             </div>
           </motion.div>
         )}

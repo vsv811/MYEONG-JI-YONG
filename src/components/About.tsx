@@ -86,17 +86,17 @@ export const About = () => {
             {/* Column 02 */}
             <div className="flex flex-col items-center text-center md:px-6 lg:px-10 md:border-r border-[#222] pb-12 md:pb-0 pt-12 md:pt-0 border-t md:border-t-0 border-[#222] h-full">
               <span className="text-[10px] text-[#444] mb-8 font-mono">02</span>
-              <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2 uppercase break-keep ">{t("공공기관 퍼포먼스", "PUBLIC INSTITUTION")}</h3>
-              <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("하이엔드 파트너십", "High-end Partnership")}</p>
+              <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-2">{t("ARTISTIC DIRECTION", "ARTISTIC DIRECTION")}</h3>
+              <p className="text-[12px] md:text-[13px] text-[#666] mb-8 tracking-wide">{t("마지 누벨 & 퍼포먼스 아트", "Magie Nouvelle & Performance Art")}</p>
               <div className="w-8 h-[1px] bg-[#444] mb-8 mx-auto" />
               <p className="text-[14px] leading-[1.8] text-[#888] mb-12 break-keep flex-1">
-                {t("국가적 행사와 지자체 무대의 품격을 갤러리 수준으로 격상시키는 하이엔드 파트너십.", "A high-end partnership that elevates the dignity of national events and local government stages to the level of a gallery.")}
+                {t("마술을 하나의 예술적 언어로 구사하는 Magie Nouvelle 아티스트. 감각적인 오브제와 깊이 있는 감정의 흐름을 융합해 마술과 현대 공연 예술의 경계를 허무는 독자적인 미학을 구축합니다.", "A Magie Nouvelle artist who uses magic as an artistic language. Fusing sensuous objects and the deep flow of emotions, we build an original aesthetic that breaks the boundaries between magic and modern performing arts.")}
               </p>
               {/* Image Box */}
               <div className="relative w-full mt-auto aspect-[4/3] overflow-hidden bg-[#0a0a0a]">
                 <img 
-                  src="/Public Institution.jpg" 
-                  alt="Public Institution" 
+                  src="/ARTISTIC DIRECTION.jpg" 
+                  alt="Artistic Direction" 
                   className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
