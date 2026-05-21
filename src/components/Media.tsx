@@ -34,7 +34,7 @@ export const Media = () => {
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen
-              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              className="w-full h-full grayscale-[50%] hover:grayscale-[0%] transition-all duration-500"
             ></iframe>
           </div>
         </motion.div>

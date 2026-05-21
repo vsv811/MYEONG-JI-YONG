@@ -10,6 +10,7 @@ const galleryData = [
     descKr: '수평선 너머, 세계를 향해 던지는 새로운 감각의 서사.',
     detailKr: 'NEW ACT For the Stage.',
     main: '/Beyond The Horizon.jpg',
+    objectPosition: 'top',
     details: ['/Beyond The Horizon.jpg']
   },
   {
@@ -206,6 +207,7 @@ export const Work = () => {
                       src={item.main} 
                       alt={item.title}
                       className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-[1.04] group-hover:opacity-100 transition-all duration-700 ease-out"
+                      style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
                       referrerPolicy="no-referrer"
                     />
                     {/* Title Overlay at bottom of image */}
